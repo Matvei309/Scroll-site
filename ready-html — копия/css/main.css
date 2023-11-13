@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+  --color-header: #f4efec;
+  --color-text: #cdc6c3;
+  --gallery-gap: calc(var(--index) * 7.5)
+}
+@font-face {
+  font-family: outfit-c;
+  src: url(../fonts/outfit-regular.woff2);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2");
+  src: url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2");
+    src: url("../fonts/Montserrat-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2");
+  src: url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2");
+  src: url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-display: swap;
+}
+
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.btn-reset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "Montserrat";
+  font-weight: 800;
+}
+
+.flex {
+  display: flex;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: outfit-c;
+}
+
+/* will-change */
+.content,
+.hero,
+.main-header,
+.gallery>* {
+  will-change: transform;
+}
+
+body {
+  background-image: url(../img/bg.jpg);
+  background-size: 50px;
+  color: #fafafa;
+  font-family: "Montserrat";
+  overflow-x: hidden;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 100vw;
+}
+
+.header {
+  width: 100%;
+  height: 110px;
+  background-color: #e4e4e4;
+  box-shadow: 5px 5px 120px red;
+  border-radius: 0 0 1rem 1rem;
+}
+
+
+.header_logo {
+  margin-right: 20px;
+  width: 105px;
+  height: 105px;
+  background-image: url(../img/logo2.png);
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header-address-link {
+  align-items: center;
+  margin-right: auto;
+  color: rgb(255, 46, 46);
+  font-size: calc(var(--index) * 1.2);
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.list-header {
+  gap: 80px;
+}
+
+.btn {
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: rgb(255, 46, 46);
+  font-size: calc(var(--index) * 0.9);
+}
+
+
+
+.text-header-style {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-size: calc(var(--index) * 2);
+}
+
+.hero {
+  width: calc(var(--index) * 36);
+  position: absolute;
+  left: 37vw;
+  top: 22vh;
+  z-index: -1;
+  will-change: transform;
+}
+
+.hero {
+  transform: translate3D(0, calc(var(--scrollTop) * 0.2), 0);
+  will-change: transform;
+}
+
+.main-header {
+  height: 100vh;
+}
+
+.container {
+  padding: 0 7vw;
+}
+
+.main-title {
+  font-size: calc(var(--index) * 8);
+  position: absolute;
+  width: min-content;
+  bottom: 12vh;
+  line-height: .9;
+  will-change: transform;
+}
+
+.main-title {
+  transform: translate3D(0, calc(var(--scrollTop) * -0.1), 0);
+  will-change: transform;
+}
+
+.gallery {
+  display: flex;
+  padding: calc(var(--index) * 8) 0 0 0;
+}
+
+.gallery>* {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gallery__item {
+  max-width: calc(var(--index) * 27);
+  margin-bottom: var(--gallery-gap);
+  max-height: 180vh;
+  border-radius: 8px;
+}
+
+.gallery__left {
+  margin-top: calc(var(--gallery-gap) * 1.75);
+}
+
+.gallery__right .gallery__item {
+  margin: 0;
+  margin-top: var(--gallery-gap);
+}
+
+.text-block {
+  color: var(--color-text);
+  position: relative;
+}
+
+.text-block__h {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: var(--color-header);
+  margin-bottom: 1.5rem;
+}
+
+
+.text-block__p {
+  line-height: 1.75;
+}
+
+.Headerline {
+  display: inline-block;
+  font-size: calc(var(--index) * 3);
+  margin-bottom: calc(var(--index) * 1.5);
+  font-family: "Montserrat";
+  font-weight: 700;
+  box-shadow: 10px 10px 8px red;
+}
+
+.paragraph {
+  max-width: 70vw;
+  font-size: calc(var(--index) * .7);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 200%;
+}
+
+.gallery__item {
+  border-radius: 3rem;
+}
+
+/* @@@@@@@############################################## */
+
+/* footer */
+/* ############################################################################################################################# */
+
+:root {
+  --margin__footer_r: auto;
+  --margin__footer_l: auto;
+
+}
+
+.foo {
+  padding: 50px 0 50px 0;
+  border-radius: 1rem 1rem 0 0;
+  color: #FFF;
+  background-color: #000;
+}
+
+
+.footer__container-left {
+  flex-direction: column;
+  margin-right: var(--margin__footer_r);
+}
+
+.footer__img {
+  gap: 5%;
+  margin-bottom: 20px;
+}
+
+.container__left-nav {
+  margin-bottom: 50px;
+}
+
+.container__left-link {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 200%;
+  color: #CACACA;
+}
+
+.link-footer {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+
+.container__left-list-bottom {
+  gap: 25px;
+}
+
+
+.footer__container-right {
+  max-width: 363px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container__right-paragraph {
+  color: #CACACA;
+}
+
+.link__class-style .link-ok, .link__class-style .link-vk {
+  fill: #999;
+  transition: fill 0.5s 0.2s;
+}
+
+.link__class-style:hover .link-ok, .link__class-style:hover .link-vk{
+  fill: #F90;
+}
+
+.link__class-style:focus .link-ok, .link__class-style:focus .link-vk{
+  fill: #999;
+}
+
+.link__class-style:active .link-ok, .link__class-style:active .link-vk{
+  fill: #E1670E;
+}
+
+.container__left-link {
+  color: #CACACA;
+  transition: color 0.5s 0.2s;
+}
+
+.container__left-item:hover .container__left-link {
+  color: #F90;
+}
+
+.container__left-item:focus .container__left-link {
+  outline: 1px solid #f90;
+  outline-offset: 5px;
+}
+
+.container__left-item:active .container__left-link {
+  color: #E1670E;
+}
+
